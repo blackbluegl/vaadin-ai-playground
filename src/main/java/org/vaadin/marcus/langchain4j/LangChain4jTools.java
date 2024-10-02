@@ -16,26 +16,26 @@ public class LangChain4jTools {
         this.service = service;
     }
 
-    @Tool("""
-            Retrieves information about an existing booking,
-            such as the flight date, booking status, departure and arrival airports, and booking class.
-            """)
-    public BookingDetails getBookingDetails(String bookingNumber, String firstName, String lastName) {
-        return service.getBookingDetails(bookingNumber, firstName, lastName);
-    }
+//    @Tool("""
+//            Retrieves information about an existing booking,
+//            such as the flight date, booking status, departure and arrival airports, and booking class.
+//            """)
+//    public BookingDetails getBookingDetails(String bookingNumber, String firstName, String lastName) {
+//        return service.getBookingDetails(bookingNumber, firstName, lastName);
+//    }
 
-    @Tool("""
-            Modifies an existing booking.
-            This includes making changes to the flight date, and the departure and arrival airports.
-            """)
-    public void changeBooking(String bookingNumber, String firstName, String lastName,
-                              LocalDate newFlightDate, String newDepartureAirport, String newArrivalAirport) {
-        service.changeBooking(bookingNumber, firstName, lastName, newFlightDate, newDepartureAirport, newArrivalAirport);
-    }
+//    @Tool("""
+//            Modifies an existing booking.
+//            This includes making changes to the flight date, and the departure and arrival airports.
+//            """)
+//    public void changeBooking(String bookingNumber, String firstName, String lastName,
+//                              LocalDate newFlightDate, String newDepartureAirport, String newArrivalAirport) {
+//        service.changeBooking(bookingNumber, firstName, lastName, newFlightDate, newDepartureAirport, newArrivalAirport);
+//    }
 
-    @Tool
-    public void cancelBooking(String bookingNumber, String firstName, String lastName) {
-        service.cancelBooking(bookingNumber, firstName, lastName);
-    }
+//    @Tool
+//    public void cancelBooking(String bookingNumber, String firstName, String lastName) {
+//        service.cancelBooking(bookingNumber, firstName, lastName);
+//    }
 
 }

@@ -14,12 +14,15 @@
         <java.version>17</java.version>
         <vaadin.version>24.4.11</vaadin.version>
         <langchain4j.version>0.35.0</langchain4j.version>
+
+        <jlama.version>0.3.1</jlama.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.3</version>
+        <relativePath></relativePath>
     </parent>
 
     <repositories>
@@ -85,12 +88,36 @@
         <!-- LangChain4j dependencies -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-jlama</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+        <!-- Add native jlama bindings -->
+        <dependency>
+            <groupId>com.github.tjake</groupId>
+            <artifactId>jlama-native</artifactId>
+            <!--classifier>${os.detected.classifier}</classifier-->
+            <classifier>windows-x86_64</classifier>
+            <version>${jlama.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-ollama</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-spring-boot-starter</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-ollama-spring-boot-starter</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
         <dependency>
@@ -112,6 +139,13 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.7.0</version>
+            </extension>
+        </extensions>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
             <plugin>

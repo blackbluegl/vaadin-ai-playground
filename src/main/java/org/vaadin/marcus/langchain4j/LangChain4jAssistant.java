@@ -6,7 +6,7 @@ import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.spring.AiService;
 import reactor.core.publisher.Flux;
 
-@AiService
+@AiService()
 public interface LangChain4jAssistant {
 
     @SystemMessage("""

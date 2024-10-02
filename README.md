@@ -21,7 +21,7 @@ The UI is built using [Vaadin Hilla](https://vaadin.com) and the backend is buil
 - OpenAI API key in `OPENAI_API_KEY` environment variable
 
 ## Running
-Run the app by running `Application.java` in your IDE or `mvn` in the command line.
+Run the app by running `Application.java` in your IDE or `mvn spring-boot:run` in the command line.
 
 ## Thanks
 This demo was inspired by the [LangChain4jCustomer Support Agent example](https://github.com/langchain4j/langchain4j-examples/tree/main/spring-boot-example/src/main/java/dev/langchain4j/example).
