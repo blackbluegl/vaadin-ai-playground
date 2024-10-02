@@ -15,7 +15,7 @@ public class AssistantService {
         this.langChain4JAssistant = langChain4JAssistant;
     }
 
-    public Flux<String> chat(String chatId, String userMessage) {
+    public String chat(String chatId, String userMessage) {
         return langChain4JAssistant.chat(chatId, userMessage);
     }
 }

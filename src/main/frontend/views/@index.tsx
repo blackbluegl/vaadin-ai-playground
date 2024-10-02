@@ -43,22 +43,17 @@ export default function Index() {
       role: 'user',
       content: message
     });
-    let first = true;
-    AssistantService.chat(chatId, message)
-      .onNext(token => {
-        if (first && token) {
-          addMessage({
-            role: 'assistant',
-            content: token
-          });
 
-          first = false;
-        } else {
-          appendToLatestMessage(token);
-        }
-      })
-      .onError(() => setWorking(false))
-      .onComplete(() => setWorking(false));
+    AssistantService.chat(chatId, message)
+        .then(answer => {
+              addMessage({
+                role: 'assistant',
+                content: answer
+              });
+            }
+        )
+        .catch(() => setWorking(false))
+        .finally(() => setWorking(false));
   }
 
 

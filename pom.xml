@@ -88,20 +88,6 @@
         <!-- LangChain4j dependencies -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-jlama</artifactId>
-            <version>${langchain4j.version}</version>
-        </dependency>
-        <!-- Add native jlama bindings -->
-        <dependency>
-            <groupId>com.github.tjake</groupId>
-            <artifactId>jlama-native</artifactId>
-            <!--classifier>${os.detected.classifier}</classifier-->
-            <classifier>windows-x86_64</classifier>
-            <version>${jlama.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-ollama</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>

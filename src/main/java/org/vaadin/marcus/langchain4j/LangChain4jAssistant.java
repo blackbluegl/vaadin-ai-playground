@@ -22,5 +22,5 @@ public interface LangChain4jAssistant {
             Use the provided functions to fetch booking details, change bookings, and cancel bookings.
             Today is {{current_date}}.
             """)
-    Flux<String> chat(@MemoryId String chatId, @UserMessage String userMessage);
+    String chat(@MemoryId String chatId, @UserMessage String userMessage);
 }
