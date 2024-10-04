@@ -14,8 +14,6 @@
         <java.version>17</java.version>
         <vaadin.version>24.4.11</vaadin.version>
         <langchain4j.version>0.35.0</langchain4j.version>
-
-        <jlama.version>0.3.1</jlama.version>
     </properties>
 
     <parent>

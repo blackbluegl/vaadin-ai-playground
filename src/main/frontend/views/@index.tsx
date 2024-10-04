@@ -46,12 +46,12 @@ export default function Index() {
 
     AssistantService.chat(chatId, message)
         .then(answer => {
-              addMessage({
-                role: 'assistant',
-                content: answer
-              });
-            }
-        )
+          addMessage({
+            role: 'assistant',
+            content: answer
+          });
+          setWorking(false)
+        })
         .catch(() => setWorking(false))
         .finally(() => setWorking(false));
   }
